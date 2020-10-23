@@ -13,15 +13,14 @@ let Сanvas = {
 }
 
 let Image = {
-  url: ''
+    url: ''
 }
 
 let Text = {
-  title: 'Text',
-  color: '#000000',
-  x:0,
-  y:0,
-  fontSize: '24px',
+    title: 'Text',
+    color: '#000000',
+    Position,
+    fontSize: '12px'
 }
 
 let Primitive = {
@@ -32,24 +31,22 @@ let Primitive = {
 
 let Circle = {
     radius: 10,
-    x:100,
-    y:100
+    Position
 }
 
 let Triangle = {
-    Point1: Point,
-    Point2: Point,
-    Point3: Point
+    Point1: Position,
+    Point2: Position,
+    Point3: Position
 }
 
 let Rectangle = {
     height:20,
     width:20,
-    x:100,
-    y:100
+    Position
 }
 
-let Point = {
+let Position = {
     x:100,
     y:100
 }
@@ -63,8 +60,7 @@ let Filters = {
 
 
 let Area ={
-    x:0,
-    y:0,
+    Position,
     height:10,
     width:20
 }
@@ -75,7 +71,8 @@ let Size = {
 }
 
 let StateHistory = {
-    Canvas
+    PrevState:Editor,
+    CurrState:Editor
 }
 
 function Import(Editor, Image){
@@ -126,7 +123,15 @@ function InsertText(Editor, Text){
     return (Editor)
 }
 
-function ChangeText(Editor, Text){
+function ChangeText(Editor){
+    return(Editor)
+}
+
+function ChangeTextPosition(Editor, Position){
+    return(Editor)
+}
+
+function ChangeTextColor(Editor){
     return(Editor)
 }
 
@@ -134,6 +139,14 @@ function InsertPrimitive(Editor, Primitive){
     return(Editor)
 }
 
-function ChangePrimitive(Editor, Primitive){
+function ChangePrimitive(Editor){
+    return(Editor)
+}
+
+function ChangePrimitivePosition(Editor, Position){
+    return(Editor)
+}
+
+function ChangePrimitiveColor(Editor){
     return(Editor)
 }
