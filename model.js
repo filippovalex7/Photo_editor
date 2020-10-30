@@ -1,46 +1,48 @@
 let Editor = {
     Сanvas,
     Filters,
+    SelectedArea,
+    SelectedText,
+    SelectedPrimitive,
     StateHistory
 }
 
 let Сanvas = {
-    Image,
-    Text,
-    Primitive,
-	Area,
+    Images,
+    Texts,
+    Primitives,
 	Size
 }
 
-let Image = {
+let Images = {
     url: ''
 }
 
-let Text = {
+let Texts = {
     title: 'Text',
     color: '#000000',
     Position,
     fontSize: '12px'
 }
 
-let Primitive = {
-    Rectangle, 
-	Circle, 
-	Triangle
+let Primitives = {
+    Rectangles, 
+	Circles, 
+	Triangles
 }
 
-let Circle = {
+let Circles = {
     radius: 10,
     Position
 }
 
-let Triangle = {
+let Triangles = {
     Point1: Position,
     Point2: Position,
     Point3: Position
 }
 
-let Rectangle = {
+let Rectangles = {
     height:20,
     width:20,
     Position
@@ -59,10 +61,18 @@ let Filters = {
 }
 
 
-let Area ={
+let SelectedArea ={
     Position,
     height:10,
     width:20
+}
+
+let SelectedText{
+    Texts
+}
+
+let SelectedPrimitive{
+    Primitives
 }
 
 let Size = {
@@ -71,8 +81,8 @@ let Size = {
 }
 
 let StateHistory = {
-    PrevState:Editor,
-    CurrState:Editor
+    UndoStack:[],
+    RedoStack:[]
 }
 
 function Import(Editor, Image){
@@ -91,7 +101,7 @@ function Redo(Editor){
     return(Editor)
 }
 
-function CreateCanvas(){
+function CreateCanvas(Editor){
     return(Editor)
 }
 
@@ -103,11 +113,11 @@ function Filter(Editor, Filters){
     return(Editor)
 }
 
-function SeletArea(Editor, Area){
+function SelectArea(Editor, Area){
     return(Editor)
 }
 
-function MoveArea(Editor){
+function MoveArea(Editor, Position){
     return(Editor)
 }
 
@@ -131,7 +141,7 @@ function ChangeTextPosition(Editor, Position){
     return(Editor)
 }
 
-function ChangeTextColor(Editor){
+function ChangeTextColor(Editor, colour){
     return(Editor)
 }
 
@@ -139,14 +149,10 @@ function InsertPrimitive(Editor, Primitive){
     return(Editor)
 }
 
-function ChangePrimitive(Editor){
-    return(Editor)
-}
-
 function ChangePrimitivePosition(Editor, Position){
     return(Editor)
 }
 
-function ChangePrimitiveColor(Editor){
+function ChangePrimitiveColor(Editor, colour){
     return(Editor)
 }
